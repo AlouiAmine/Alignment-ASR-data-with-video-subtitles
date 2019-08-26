@@ -84,6 +84,8 @@ aligned_asr_fr2.to_csv(path_or_buf='aligned_asr_fr2.csv',sep='|',index=False)
 
 remaining_asr_out_fr2=asr_out_fr2[~asr_out_fr2['index'].isin(aligned_asr_fr2['index'])]
 remaining_ground_truth_fr2=ground_truth_fr2[~ground_truth_fr2['index'].isin(aligned_ground_truth_fr2['index'])]
+remaining_asr_out_fr2.to_hdf('remaining_asr_out_fr2.hdf', key='abc')
+remaining_ground_truth_fr2.to_hdf('remaining_ground_truth_fr2.hdf', key='abc')
 
 remaining_asr_out_fr2.to_csv(path_or_buf='remaining_asr_out_fr2.csv',sep='|',index=False)
 remaining_ground_truth_fr2.to_csv(path_or_buf='remaining_ground_truth_fr2.csv',sep='|',index=False)
