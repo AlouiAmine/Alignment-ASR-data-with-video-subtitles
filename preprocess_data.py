@@ -25,7 +25,7 @@ sub.to_hdf('pa_subtitles.hdf', key='abc')
 
 #read and convert the json file
 tweets = []
-for line in open(args.INA_subtitles', 'r',encoding="utf-8"):
+for line in open(args.INA_subtitles, 'r',encoding="utf-8"):
     tweets.append(json.loads(line))
     
 
