@@ -2,10 +2,16 @@ import pandas as pd
 import datetime
 import json
 import csv
+import argparse
 
+parser = argparse.ArgumentParser()
+parser.add_argument('--pa_subtitles',type=str, help='the data to process', required=True)
+parser.add_argument('--INA_subtitles',type=str, help='the data to process', required=True)
+
+args=parser.parse_args()
 
 #convert the date from string to datetime python object 
-sub=pd.read_csv('pa_subtitles.csv')
+sub=pd.read_csv(args.pa_subtitles)
 
 for i in range(sub.shape[0]//7):
     if i%100==0:
@@ -19,7 +25,7 @@ sub.to_hdf('pa_subtitles.hdf', key='abc')
 
 #read and convert the json file
 tweets = []
-for line in open('INA_subtitles.json', 'r',encoding="utf-8"):
+for line in open(args.INA_subtitles', 'r',encoding="utf-8"):
     tweets.append(json.loads(line))
     
 
