@@ -1,4 +1,4 @@
-# Alignement ASR data with video subtitles:
+# Alignment ASR data with video subtitles:
 
 # Preprocessing the two files :
 
